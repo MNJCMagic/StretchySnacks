@@ -10,16 +10,32 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var navHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var plusButton: UIButton!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    @IBAction func plusIconPressed(_ sender: UIButton) {
+        var trans: CGAffineTransform!
+        if navHeightConstraint.constant == 66 {
+            self.navHeightConstraint.constant = 200
+            
+            trans = CGAffineTransform(rotationAngle: -.pi/2)
+            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: .curveEaseInOut, animations: {
+                    self.view.layoutIfNeeded()
+                    self.plusButton.transform = trans
+                
 
+            }, completion: nil)
+        }
+    }
+    
 
 }
 
