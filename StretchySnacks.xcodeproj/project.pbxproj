@@ -12,6 +12,7 @@
 		270428F020B70F71001D170C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 270428EE20B70F71001D170C /* Main.storyboard */; };
 		270428F220B70F73001D170C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 270428F120B70F73001D170C /* Assets.xcassets */; };
 		270428F520B70F73001D170C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 270428F320B70F73001D170C /* LaunchScreen.storyboard */; };
+		270428FD20B75290001D170C /* Snack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270428FC20B75290001D170C /* Snack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		270428F120B70F73001D170C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		270428F420B70F73001D170C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		270428F620B70F73001D170C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		270428FC20B75290001D170C /* Snack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				270428EA20B70F71001D170C /* AppDelegate.swift */,
 				270428EC20B70F71001D170C /* ViewController.swift */,
+				270428FC20B75290001D170C /* Snack.swift */,
 				270428EE20B70F71001D170C /* Main.storyboard */,
 				270428F120B70F73001D170C /* Assets.xcassets */,
 				270428F320B70F73001D170C /* LaunchScreen.storyboard */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				270428FD20B75290001D170C /* Snack.swift in Sources */,
 				270428ED20B70F71001D170C /* ViewController.swift in Sources */,
 				270428EB20B70F71001D170C /* AppDelegate.swift in Sources */,
 			);

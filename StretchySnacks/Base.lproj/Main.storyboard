@@ -36,18 +36,41 @@
                                     <constraint firstAttribute="height" constant="66" id="CaA-L2-f53"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fYQ-34-G1r">
+                                <rect key="frame" x="0.0" y="66" width="375" height="601"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="snackCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="snackCell" id="8EZ-NP-U7J">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8EZ-NP-U7J" id="8gg-rE-Af8">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="NiZ-MO-J0d"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="3jk-qn-J6u"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Eu1-Vo-Vnx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3ke-LT-XRS"/>
+                            <constraint firstItem="fYQ-34-G1r" firstAttribute="top" secondItem="Eu1-Vo-Vnx" secondAttribute="bottom" id="8Sl-Ov-Ozf"/>
                             <constraint firstItem="Eu1-Vo-Vnx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="KRg-oE-pa6"/>
+                            <constraint firstItem="fYQ-34-G1r" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ml8-Zx-Bzc"/>
                             <constraint firstItem="Eu1-Vo-Vnx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="kdB-iv-fdp"/>
+                            <constraint firstItem="fYQ-34-G1r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oGT-xh-7tq"/>
+                            <constraint firstItem="fYQ-34-G1r" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="yg4-GK-utn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="navHeightConstraint" destination="CaA-L2-f53" id="Yhp-Dx-eLk"/>
                         <outlet property="plusButton" destination="8CP-D9-9a3" id="esM-CH-k91"/>
+                        <outlet property="tableView" destination="fYQ-34-G1r" id="E4U-Ug-Jly"/>
                         <outlet property="topView" destination="Eu1-Vo-Vnx" id="YBz-lP-0sl"/>
                     </connections>
                 </viewController>
