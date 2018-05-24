@@ -18,17 +18,22 @@ class ViewController: UIViewController, UITableViewDataSource {
     var counter = 0
     @IBOutlet weak var tableView: UITableView!
     var snacks: [Snack]! = [Snack]()
+    var snackLabel: UILabel!
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpButtons()
+        setupSnackLabel()
         setUpStackview()
+        
         tableView.dataSource = self
         
         
     }
+    
+    //MARK: SETUPS
     
     func setUpButtons() {
         let button1 = UIImageView()
@@ -75,6 +80,15 @@ class ViewController: UIViewController, UITableViewDataSource {
         self.view.layoutIfNeeded()
         }
 
+    func setupSnackLabel() {
+        let snackLabel = UILabel()
+        self.snackLabel = snackLabel
+        snackLabel.text = "SNACKS"
+        snackLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(snackLabel)
+        snackLabel.centerXAnchor.constraint(equalTo: topView.centerXAnchor).isActive = true
+        snackLabel.centerYAnchor.constraint(equalTo: topView.centerYAnchor).isActive = true
+    }
     
         //MARK ACTIONS
     
@@ -109,11 +123,13 @@ class ViewController: UIViewController, UITableViewDataSource {
             }
     }
     
+    
     @IBAction func plusIconPressed(_ sender: UIButton) {
         var count = counter % 2
         var trans: CGAffineTransform!
         switch count {
         case 0:
+            //snackLabel.centerYAnchor.constraint(equalTo: topView.centerYAnchor).isActive = true
             stackView.isHidden = false
             self.navHeightConstraint.constant = 200
             trans = CGAffineTransform(rotationAngle: -.pi/2)
@@ -122,6 +138,8 @@ class ViewController: UIViewController, UITableViewDataSource {
                 self.plusButton.transform = trans
                 }, completion: nil)
         case 1:
+            snackLabel.centerYAnchor.constraint(equalTo: topView.centerYAnchor).constant = 40
+            
             stackView.isHidden = true
             self.navHeightConstraint.constant = 66
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: .curveEaseInOut, animations: {
